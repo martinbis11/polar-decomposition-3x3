@@ -865,8 +865,8 @@ namespace polar
     //   optimizations as easy to read as possible.
     //
     // It is also worth noting that this implementation relies on two major sources:
-    // - The algorithm as described in the paper.
-    // - The algorithm as implemented in the paper.
+    // - The algorithm as described in the paper
+    // - The algorithm as implemented in the Matlab implementation.
     //
     // This implementation tries to highlight its references to both the paper and
     // the source code.
