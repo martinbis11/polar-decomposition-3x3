@@ -239,7 +239,7 @@ namespace polar
         // using the proper libraries.
         //
 
-        template < typename TReal >
+        template <typename TReal>
         inline void normalize(matrix<TReal, 3, 3>& m)
         {
             TReal length = m(0) * m(0);
@@ -266,7 +266,7 @@ namespace polar
             m(8) *= factor;
         }
 
-        template < typename TReal >
+        template <typename TReal>
         inline void normalize(vector<TReal, 4>& m)
         {
             TReal length = m(0) * m(0);
@@ -284,8 +284,8 @@ namespace polar
         }
 
 
-        template < typename TReal >
-        void transpose_multiply(
+        template <typename TReal>
+        inline void transpose_multiply(
             matrix<TReal, 3, 3>& result,
             const matrix<TReal, 3, 3>& a,
             const matrix<TReal, 3, 3>& b
@@ -304,8 +304,8 @@ namespace polar
         }
 
 
-        template < typename TReal >
-        void multiply(
+        template <typename TReal>
+        inline void multiply(
             matrix<TReal, 4, 4>& result,
             const TReal factor
             )
@@ -328,8 +328,8 @@ namespace polar
             result(15) *= factor;
         }
 
-        template < typename TReal >
-        void multiply(
+        template <typename TReal>
+        inline void multiply(
             matrix<TReal, 2, 2>& result,
             const TReal factor
             )
@@ -341,8 +341,8 @@ namespace polar
         }
 
 
-        template < typename TReal >
-        TReal dot(const vector<TReal, 4>& a, const vector<TReal, 4>& b)
+        template <typename TReal>
+        inline TReal dot(const vector<TReal, 4>& a, const vector<TReal, 4>& b)
         {
             return a(0)*b(0) + a(1)*b(1) + a(2)*b(2) + a(3)*b(3);
         }

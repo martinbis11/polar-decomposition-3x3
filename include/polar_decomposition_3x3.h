@@ -43,7 +43,7 @@ namespace polar
     // A [in]  : Matrix to decompose.
     // Q [out] : Rotation part of the polar decomposition.
     // H [out] : Symmetric matrix represention the scale part of the polar decomposition.
-    template < typename TReal >
+    template <typename TReal>
     void polar_decomposition(TReal* Q, TReal* H, const TReal* A)
     {
         // Convert parameters for the algorithm implementation.

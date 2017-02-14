@@ -40,7 +40,7 @@ namespace polar
     {
 
 
-        // This method computes is based on the Matlab implementation.
+        // This method is based on the Matlab implementation.
         // It computes the determinant of B matrix from an LU factorization with partial pivoting,
         // except that it actually computes it from the values of A, (B matrix is a function of A).
         template <typename TReal>
@@ -211,7 +211,8 @@ namespace polar
         // This method is based on the Matlab implementation.
         // It computes an LDL^T factorization with diagonal pivoting, P^T Bs P = L D L^T.
         // This method modifies the Bs matrix.
-        // Note: The method does not fill the whole L matrix, the caller should assume:
+        // Note: The method does not fill the whole L matrix, just the lower left part.
+        // The caller should assume:
         //       - L(i,i) == 1
         //       - L(i,j) == 0 for i > j
         template <typename TReal>
@@ -461,7 +462,8 @@ namespace polar
         // This method is based on the Matlab implementation.
         // It computes an LDL^T factorization by block LDL^T factorization with Bunch-Parlett pivoting.
         // This method modifies the Bs matrix.
-        // Note: The method does not fill the whole L matrix, the caller should assume:
+        // Note: The method does not fill the whole L matrix, just the lower left part.
+        // The caller should assume:
         //       - L(i,i) == 1
         //       - L(i,j) == 0 for i > j
         //       - L(2,3) == 0
@@ -884,14 +886,14 @@ namespace polar
 
 
         template <typename TReal>
-        TReal run_algorithm_3_3(const TReal absDetA, const TReal detB);
+        inline TReal run_algorithm_3_3(const TReal absDetA, const TReal detB);
 
         template <typename TReal>
-        TReal run_algorithm_3_4(const TReal absDetA, const TReal detB);
+        inline TReal run_algorithm_3_4(const TReal absDetA, const TReal detB);
 
         // Implementation of algorithm 3.2.
         template <typename TReal>
-        void run_algorithm_3_2(
+        inline void run_algorithm_3_2(
             vector<TReal, 4>& v,
             vector<int, 4>& p,
             const matrix<TReal, 3, 3>& A,
@@ -950,7 +952,7 @@ namespace polar
 
         // Implementation of algorithm 3.3.
         template <typename TReal>
-        TReal run_algorithm_3_3(
+        inline TReal run_algorithm_3_3(
             const TReal absDetA,
             const TReal detB
             )
@@ -1000,7 +1002,7 @@ namespace polar
 
         // Implementation of algorithm 3.4.
         template <typename TReal>
-        TReal run_algorithm_3_4(
+        inline TReal run_algorithm_3_4(
             const TReal absDetA,
             const TReal detB
             )
@@ -1035,7 +1037,7 @@ namespace polar
 
         // Implementation of algorithm 3.5.
         template <typename TReal>
-        void run_algorithm_3_5(
+        inline void run_algorithm_3_5(
             matrix<TReal, 3, 3>& paramQ,
             matrix<TReal, 3, 3>& paramH,
             const matrix<TReal, 3, 3>& paramA
